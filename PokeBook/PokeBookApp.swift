@@ -2,16 +2,22 @@
 //  PokeBookApp.swift
 //  PokeBook
 //
-//  Created by 디해 on 2023/03/20.
+//  Created by d해 on 2023/03/20.
 //
 
 import SwiftUI
 
 @main
 struct PokeBookApp: App {
+    init() {
+        ServiceLocator.shared.registerPokeRepo(repo: RealPokeRepository())
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabScreen()
+                .environment(\.managedObjectContext,
+                              PersistenceController.shared.container.viewContext)
         }
     }
 }
