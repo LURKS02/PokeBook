@@ -30,15 +30,8 @@ struct PokemonBigCell: View {
         
         VStack {
             ZStack(alignment: .topTrailing) {
-                AsyncImage(url: viewModel.pokemon.officialFrontDefault) {
-                    image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    Color.white
-                        .frame(minHeight: 100)
-                }
+                
+                ImageSourceView(url: viewModel.pokemon.officialFrontDefault!)
                 
                 LoveButton(viewModel: viewModel,
                            loveColor: .white)
