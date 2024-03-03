@@ -20,20 +20,19 @@ struct PokemonImageView: View {
                 ZStack() {
                     Color.white
                         .frame(height: 100)
+                        .cornerRadius(17)
                     
                     VersionPokemonImage(frontImage: shinyToggle && isShinyExist(pokemonImage: pokemonImage) ? pokemonImage.frontShiny : pokemonImage.frontDefault,
                                         backImage: shinyToggle && isShinyExist(pokemonImage: pokemonImage) ? pokemonImage.backShiny : pokemonImage.backDefault, pokemonImageSize: pokemonImageSize)
                 }
             }
             
-            SimpleLine()
-            
             VersionTitle(version: pokemonImage.version)
         }
         .padding(10)
         .background {
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(hexString: "ededed"), lineWidth: 2)
+                .stroke(Color.get(.background(.stroke)), lineWidth: 2)
             
         }
         .onTapGesture {
@@ -62,6 +61,7 @@ struct VersionPokemonImage: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: pokemonImageSize)
+                        .background(.white)
                 } placeholder: {
                     Color.white
                 }
@@ -75,6 +75,7 @@ struct VersionPokemonImage: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: pokemonImageSize)
+                        .background(.white)
                 } placeholder: {
                     Color.white
                 }
@@ -82,6 +83,7 @@ struct VersionPokemonImage: View {
             }
             
         }
+        .background(.white)
     }
 }
 

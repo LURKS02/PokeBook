@@ -24,7 +24,7 @@ struct ImageSourceView: View {
                     .resizable()
                     .scaledToFit()
             } else {
-                Color.white
+                Color.get(.background(.cell))
                     .frame(minHeight: 100)
             }
         }

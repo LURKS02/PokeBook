@@ -17,6 +17,7 @@ struct PokemonListScreen: View {
     
     var body: some View {
         self.content
+            .background(Color.get(.background(.screen)))
             .onAppear {
             self.safeAreaHeight = safeArea().top
             }
@@ -82,11 +83,6 @@ private extension PokemonListScreen {
             .fullScreenCover(item: $selectedPoke) { pokemon in
                 PokemonDetailInfoScreen(pokemonID: pokemon.id)
             }
-//            .refreshable {
-//                if (viewModel.searchText.isEmpty) {
-//                    viewModel.fetchPokes()
-//                }
-//            }
         }
         
         
@@ -129,6 +125,7 @@ private extension PokemonListScreen {
         VStack {
             PokeSpinner()
             Text("불러오는 중...")
+                .foregroundColor(.get(.text(.primary)))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -137,6 +134,7 @@ private extension PokemonListScreen {
         VStack {
             PokeSpinner()
             Text("검색 중...")
+                .foregroundColor(.get(.text(.primary)))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -188,15 +186,6 @@ extension PokemonListScreen {
                 })
             searchCancellable?.store(in: &cancelBag)
         }
-        
-//        func fetchPokes() {
-//            let request: NSFetchRequest<LikedPokemon> = LikedPokemon.fetchRequest()
-//            searchCancellable = persistenceController.fetchPokemons(offset: 0, using: repo)
-//                .receive(on: DispatchQueue.main)
-//                .sink(receiveValue: { [weak self] in
-//                    self?.pokemons += $0.pokeList
-//                })
-//        }
         
         func setupSearchText() {
             $searchText

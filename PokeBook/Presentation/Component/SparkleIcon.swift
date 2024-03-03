@@ -15,10 +15,10 @@ struct SparkleIcon: View {
             .resizable()
             .frame(width: 15, height: 20)
             .padding(7)
-            .foregroundColor(.white)
+            .foregroundColor(Color.get(.background(.screen)))
             .background(){
                 Circle()
-                    .fill(Color(hexString: isSparkle ? "5B5B5B" : "CACACA"))
+                    .fill(isSparkle ? Color.get(.button(.shinyBackgroundOn)) : Color.get(.button(.shinyBackgroundOff)))
             }
             .animation(.easeInOut(duration: 0.3), value: isSparkle)
     }

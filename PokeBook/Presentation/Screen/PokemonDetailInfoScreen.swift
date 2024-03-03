@@ -31,6 +31,7 @@ struct PokemonDetailInfoScreen: View {
         NavigationView {
             ZStack(alignment: .top) {
                 contentView
+                .background(Color.get(.background(.screen)))
                 .ignoresSafeArea()
                 .task { viewModel.fetchPoke(id: pokemonID) }
                 .overlay(alignment: .center) {
@@ -88,7 +89,7 @@ private extension PokemonDetailInfoScreen {
         }
         ToolbarItemGroup(placement: .navigationBarTrailing) {
             LoveButton(viewModel: LoveButtonViewModel(pokemon: viewModel.pokemon.convertToCell()),
-                       loveColor: .black)
+                       loveColor: Color.get(.text(.primary)))
             EllipsisButton()
         }
     }
@@ -133,7 +134,7 @@ private extension PokemonDetailInfoScreen {
         }
         
         var placeholderImage: some View {
-            Color.white
+            Color.get(.background(.screen))
                 .frame(height: officialImageHeight)
         }
     }
@@ -155,8 +156,7 @@ private extension PokemonDetailInfoScreen {
                 SimpleLine()
                 content
                     .padding(20)
-                SimpleLine(height: 10,
-                           opacity: 0.1)
+                SimpleLine(height: 10)
             }
         }
         
@@ -195,7 +195,7 @@ private extension PokemonDetailInfoScreen {
                 
                 Text(viewModel.pokemon.genera)
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color.get(.text(.secondary)))
                 
                 pokeSpec(height: viewModel.pokemon.height, weight: viewModel.pokemon.weight)
                 
@@ -258,7 +258,7 @@ private extension PokemonDetailInfoScreen {
         
         var body: some View {
             VStack {
-                SimpleLine(height: 10, opacity: 0.1)
+                SimpleLine(height: 10)
                 content
                     .padding(.top, 15)
                     .padding(.bottom, 20)
@@ -290,7 +290,7 @@ private extension PokemonDetailInfoScreen {
         
         var body: some View {
             VStack {
-                SimpleLine(height: 10, opacity: 0.1)
+                SimpleLine(height: 10)
                 content
                     .padding(20)
             }
@@ -318,7 +318,7 @@ private extension PokemonDetailInfoScreen {
         
         var body: some View {
             VStack {
-                SimpleLine(height: 10, opacity: 0.1)
+                SimpleLine(height: 10)
                 content
                     .padding(20)
             }

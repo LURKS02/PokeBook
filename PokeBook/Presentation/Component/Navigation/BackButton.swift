@@ -15,7 +15,7 @@ struct BackButton: View {
             self.$presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "chevron.backward")
-                .foregroundColor(.black)
+                .foregroundColor(Color.get(.text(.primary)))
         }
     }
 }

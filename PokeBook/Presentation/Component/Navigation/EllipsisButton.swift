@@ -11,7 +11,7 @@ struct EllipsisButton: View {
     var body: some View {
         Button(action: {}) {
             Image(systemName: "ellipsis")
-                .foregroundColor(.black)
+                .foregroundColor(Color.get(.text(.primary)))
         }
     }
 }

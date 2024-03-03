@@ -100,7 +100,7 @@ struct FlavorTextBar: View {
                    alignment: .leading)
             .padding(15)
             .background {
-                Color.white
+                Color.get(.background(.cell))
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.15),
                             radius: 3)

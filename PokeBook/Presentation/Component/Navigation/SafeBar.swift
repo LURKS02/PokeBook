@@ -11,7 +11,7 @@ struct SafeBar: View {
     var body: some View {
         GeometryReader { geometry in
             Rectangle()
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.get(.background(.screen)))
                 .ignoresSafeArea()
                 .frame(height:0)
         }

@@ -21,8 +21,10 @@ struct PokemonBigCell: View {
             content
         }
         .padding()
+        .background(RoundedRectangle(cornerRadius: 20)
+                .fill(Color.get(.background(.cell))))
         .overlay(RoundedRectangle(cornerRadius: 20)
-            .stroke(Color(hexString: "e0e0e0"), lineWidth: 1))
+            .stroke(Color.get(.background(.stroke)), lineWidth: 1.5))
         .frame(maxWidth: .infinity, maxHeight: 300)
     }
     
@@ -34,17 +36,17 @@ struct PokemonBigCell: View {
                 ImageSourceView(url: viewModel.pokemon.officialFrontDefault!)
                 
                 LoveButton(viewModel: viewModel,
-                           loveColor: .white)
+                           loveColor: Color.get(.background(.screen)))
             }
             
             Text(viewModel.pokemon.name)
                 .font(.title2)
                 .fontWeight(.black)
-                .foregroundColor(.black)
+                .foregroundColor(Color.get(.text(.primary)))
             
             Text(viewModel.pokemon.genera)
                 .font(.subheadline)
-                .foregroundColor(.gray)
+                .foregroundColor(Color.get(.text(.secondary)))
             
             HStack {
                 ForEach(viewModel.pokemon.types, id: \.self) { type in

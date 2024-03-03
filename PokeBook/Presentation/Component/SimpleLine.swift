@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct SimpleLine: View {
-    var height: CGFloat
-    var opacity: CGFloat
+    private var height: CGFloat
     
-    init(height: CGFloat = 1,
-         opacity: CGFloat = 0.2) {
+    init(height: CGFloat = 1) {
         self.height = height
-        self.opacity = opacity
     }
     
     var body: some View {
         Rectangle()
-            .fill(Color.gray.opacity(opacity))
+            .fill(Color.get(.background(.line)))
             .frame(height:height)
     }
 }

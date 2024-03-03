@@ -23,16 +23,18 @@ struct AbilityBar: View {
             Spacer()
             
             Text(name)
+                .foregroundColor(.black)
                 .fontWeight(.semibold)
                 .frame(width:abilityNameMaxWidth)
             
             Text(flavorText)
+                .foregroundColor(Color.get(.text(.primary)))
                 .font(.subheadline)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(textPadding)
                 .background() {
                     RoundedRectangle(cornerRadius: 6)
-                        .fill(.white)
+                        .fill(Color.get(.background(.cell)))
                 }
         }
         .padding(.vertical, boxPadding)

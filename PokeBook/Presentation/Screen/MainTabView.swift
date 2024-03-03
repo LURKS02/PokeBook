@@ -25,7 +25,7 @@ struct MainTabView: View {
             }
         }
         .padding(.top, 10)
-        .background(Color.white.edgesIgnoringSafeArea(.bottom)
+        .background(Color.get(.background(.screen)).edgesIgnoringSafeArea(.bottom)
             .shadow(color: .gray.opacity(0.3), radius: 2))
     }
     
@@ -45,7 +45,7 @@ extension MainTabView {
                 .font(.system(size: 11))
         }
         .frame(maxWidth: .infinity)
-        .foregroundColor(selection == tab ? Color.black : Color.gray)
+        .foregroundColor(selection == tab ? .get(.tap(.selected)) : .get(.tap(.notSelected)))
     }
 }
 

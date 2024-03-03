@@ -13,7 +13,7 @@ struct SubTitle: View {
         HStack {
             Text(title)
                 .font(.subheadline)
-                .foregroundColor(Color(hexString: "838383"))
+                .foregroundColor(Color.get(.text(.secondary)))
             Spacer()
         }
     }

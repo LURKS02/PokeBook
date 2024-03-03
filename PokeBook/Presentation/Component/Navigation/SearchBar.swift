@@ -15,7 +15,7 @@ struct SearchBarView: View {
         SearchBar(text: $text)
             .padding(.horizontal)
             .background {
-                Color.white
+                Color.get(.background(.screen))
                     .shadow(color: .gray.opacity(0.3), radius: 2)
             }
     }
@@ -31,7 +31,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.searchBarStyle = .minimal
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "어떤 포켓몬을 검색할까요?", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         searchBar.searchTextField.font = .systemFont(ofSize: 15)
-        searchBar.backgroundColor = UIColor.white
+        searchBar.backgroundColor = UIColor(Color.get(.background(.screen)))
         
         return searchBar
     }
@@ -55,3 +55,5 @@ extension SearchBar {
         }
     }
 }
+
+

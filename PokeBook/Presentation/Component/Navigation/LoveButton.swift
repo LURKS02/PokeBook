@@ -74,6 +74,6 @@ struct LoveButton_Previews: PreviewProvider {
     
     static var previews: some View {
         LoveButton(viewModel: LoveButtonViewModel(pokemon: PokemonCell(id: 1, name: "dd", genera: "dd", types: [])),
-                   loveColor: .white)
+                   loveColor: Color.get(.background(.cell)))
     }
 }

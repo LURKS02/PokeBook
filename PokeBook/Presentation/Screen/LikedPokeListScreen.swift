@@ -14,6 +14,7 @@ struct LikedPokeListScreen: View {
     
     var body: some View {
         self.content
+            .background(Color.get(.background(.screen)))
             .onChange(of: selection) { newValue in
                 if newValue == .liked {
                     viewModel.fetchLikeds()
@@ -36,6 +37,7 @@ private extension LikedPokeListScreen {
         var body: some View {
             VStack() {
                 Text("아직 좋아요한 포켓몬이 없어요.")
+                    .foregroundColor(.get(.text(.primary)))
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

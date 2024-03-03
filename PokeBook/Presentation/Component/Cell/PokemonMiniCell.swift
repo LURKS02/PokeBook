@@ -20,7 +20,7 @@ struct PokemonMiniCell: View {
             .padding(.vertical, 13)
             .padding(.horizontal, 10)
             .background(RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.white)
+                .foregroundColor(Color.get(.background(.cell)))
                 .shadow(color: Color.gray.opacity(0.5), radius: 2))
     }
     
@@ -29,7 +29,6 @@ struct PokemonMiniCell: View {
             AsyncImage(url: pokemon.dotFrontDefault) { image in
                 image
                     .resizable()
-                    //.scaleEffect(1.2)
                     .scaledToFit()
             } placeholder: {
                 Color.white
@@ -39,7 +38,7 @@ struct PokemonMiniCell: View {
                 Text(pokemon.name)
                     .font(.subheadline)
                     .fontWeight(.black)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color.get(.text(.primary)))
                 
                 HStack(spacing: 5) {
                     ForEach(pokemon.types, id: \.self) { type in
