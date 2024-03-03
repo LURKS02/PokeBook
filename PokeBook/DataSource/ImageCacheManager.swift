@@ -7,14 +7,14 @@
 
 import UIKit
 
-actor ImageCacheManager {
+class ImageCacheManager {
     static let shared = ImageCacheManager()
     
     private init () { }
-    private var cachedImages: [URL: UIImage] = [:]
+    private var cache = NSCache<NSURL, UIImage>()
     
     func getImage(url: URL) async -> UIImage? {
-        guard let image = cachedImages[url] else {
+        guard let image = cache.object(forKey: url as NSURL) else {
             do {
                 let image = try await storeImage(url: url)
                 return image
@@ -30,7 +30,7 @@ actor ImageCacheManager {
     func storeImage(url: URL) async throws -> UIImage? {
         let (data, _) = try await URLSession.shared.data(from: url)
         guard let image = UIImage(data: data) else { throw ErrorType.failDataToUIImage }
-        cachedImages[url] = image
+        cache.setObject(image, forKey: url as NSURL)
         return image
     }
 }
