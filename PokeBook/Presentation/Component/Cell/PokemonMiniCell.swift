@@ -38,6 +38,7 @@ struct PokemonMiniCell: View {
                 Text(pokemon.name)
                     .font(.subheadline)
                     .fontWeight(.black)
+                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color.get(.text(.primary)))
                 
                 HStack(spacing: 5) {

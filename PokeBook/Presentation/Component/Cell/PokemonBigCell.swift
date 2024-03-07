@@ -25,7 +25,7 @@ struct PokemonBigCell: View {
                 .fill(Color.get(.background(.cell))))
         .overlay(RoundedRectangle(cornerRadius: 20)
             .stroke(Color.get(.background(.stroke)), lineWidth: 1.5))
-        .frame(maxWidth: .infinity, maxHeight: 300)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     @ViewBuilder private var content: some View {

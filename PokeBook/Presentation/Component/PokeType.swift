@@ -11,10 +11,10 @@ enum ButtonSize {
     case big
     case small
     
-    var fontSize: CGFloat {
+    var fontSize: Font {
         switch self {
-        case .big: return 17
-        case .small: return 12
+        case .big: return .title3
+        case .small: return .caption
         }
     }
     
@@ -47,7 +47,8 @@ struct PokeType: View {
     var body: some View {
         Text(typeName)
             .fontWeight(.bold)
-            .font(.system(size: buttonSize.fontSize))
+            .font(buttonSize.fontSize)
+            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             .padding(.vertical, buttonSize.verticalPadding)
             .padding(.horizontal, buttonSize.horizontalPadding)
             .foregroundColor(.black)

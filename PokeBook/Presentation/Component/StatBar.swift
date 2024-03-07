@@ -117,7 +117,7 @@ struct StatBar: View {
                    height: 17)
             .overlay(alignment: .trailing) {
                 Text("\(value)")
-                    .font(.caption)
+                    .font(.system(size: 12))
                     .fontWeight(.bold)
                     .foregroundColor(stat == .total ? .black : .white)
                     .padding(.trailing, 5)
