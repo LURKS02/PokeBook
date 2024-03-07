@@ -54,23 +54,22 @@ private extension LikedPokeListScreen {
             ScrollView(showsIndicators: false) {
                 pokeMiniGridView(columns: columns)
             }
-            .fullScreenCover(item: $selectedPoke) { pokemon in
-                PokemonDetailInfoScreen(pokemonID: pokemon.id)
-            }
             .onChange(of: selectedPoke) { newValue in
                 if newValue == nil {
                     likedListViewModel.fetchLikeds()
                 }
+            }
+            .onAppear {
+                likedListViewModel.fetchLikeds()
             }
         }
         
         func pokeMiniGridView(columns: [GridItem]) -> some View {
             LazyVGrid(columns: columns) {
                 ForEach(likedListViewModel.pokemons) { pokemon in
-                    PokemonMiniCell(pokemon: pokemon,
-                                    action: {
-                        selectedPoke = pokemon
-                    })
+                    NavigationLink(destination: PokemonDetailInfoScreen(pokemonID: pokemon.id)) {
+                        PokemonMiniCell(pokemon: pokemon)
+                    }
                 }
             }
             .padding()

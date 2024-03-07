@@ -80,9 +80,9 @@ private extension PokemonListScreen {
                     }
             }
             .padding(.horizontal)
-            .fullScreenCover(item: $selectedPoke) { pokemon in
-                PokemonDetailInfoScreen(pokemonID: pokemon.id)
-            }
+//            .fullScreenCover(item: $selectedPoke) { pokemon in
+//                PokemonDetailInfoScreen(pokemonID: pokemon.id)
+//            }
         }
         
         
@@ -101,10 +101,9 @@ private extension PokemonListScreen {
         func pokeGridView(columns: [GridItem]) -> some View {
             LazyVGrid(columns: columns) {
                 ForEach(viewModel.pokemons) { pokemon in
-                    PokemonBigCell(viewModel: LoveButtonViewModel(pokemon: pokemon),
-                                   action: {
-                        selectedPoke = pokemon
-                    })
+                    NavigationLink(destination: PokemonDetailInfoScreen(pokemonID: pokemon.id)) {
+                        PokemonBigCell(viewModel: LoveButtonViewModel(pokemon: pokemon))
+                    }
                     .onAppear {
                         if (viewModel.searchText == "") {
                             viewModel.loadNextPage(value: 50, pokemon: pokemon)

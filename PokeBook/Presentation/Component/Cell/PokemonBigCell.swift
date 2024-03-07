@@ -13,13 +13,14 @@ struct PokemonBigCell: View {
 //    let name: String
 //    let type: String
 //    let isLiked: Bool
-    let action: () -> Void
+//    let action: () -> Void
     
     var body: some View {
         
-        Button(action: action) {
-            content
-        }
+//        Button(action: action) {
+//            content
+//        }
+        content
         .padding()
         .background(RoundedRectangle(cornerRadius: 20)
                 .fill(Color.get(.background(.cell))))
@@ -60,7 +61,6 @@ struct PokemonBigCell: View {
 struct PokeListCell_Previews: PreviewProvider {
     
     static var previews: some View {
-        PokemonBigCell(viewModel: LoveButtonViewModel(pokemon: Pokemon.mockedData.convertToCell()),
-                       action: {})
+        PokemonBigCell(viewModel: LoveButtonViewModel(pokemon: Pokemon.mockedData.convertToCell()))
     }
 }

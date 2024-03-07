@@ -28,21 +28,19 @@ struct PokemonDetailInfoScreen: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .top) {
-                contentView
+        ZStack(alignment: .top) {
+            contentView
                 .background(Color.get(.background(.screen)))
                 .ignoresSafeArea()
                 .task { viewModel.fetchPoke(id: pokemonID) }
                 .overlay(alignment: .center) {
                     if !viewModel.isLoaded { PokeSpinner() }
                 }
-                
-                animatedNavigationBar
-            }
-            .navigationBarBackButtonHidden(true)
-            .toolbar(content: toolbarContent)
+            
+            animatedNavigationBar
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: toolbarContent)
     }
     
     @ViewBuilder private var contentView: some View {

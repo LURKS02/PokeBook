@@ -11,12 +11,14 @@ struct MainTabScreen: View {
     @State private var selection: TabIndex = .home
     
     var body: some View {
-        MainTabController(selection: $selection) {
-            PokemonListScreen()
-                .tabBarHelper(tab: .home, selection: $selection)
-            
-            LikedPokeListScreen(selection: $selection)
-                .tabBarHelper(tab: .liked, selection: $selection)
+        NavigationView {
+            MainTabController(selection: $selection) {
+                PokemonListScreen()
+                    .tabBarHelper(tab: .home, selection: $selection)
+                
+                LikedPokeListScreen(selection: $selection)
+                    .tabBarHelper(tab: .liked, selection: $selection)
+            }
         }
     }
 }

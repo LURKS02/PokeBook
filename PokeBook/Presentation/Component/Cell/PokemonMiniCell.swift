@@ -11,12 +11,9 @@ import CoreData
 struct PokemonMiniCell: View {
 
     let pokemon: PokemonCell
-    let action: () -> ()
     
     var body: some View {
-        Button(action: action) {
-            content
-        }
+        content
             .padding(.vertical, 13)
             .padding(.horizontal, 10)
             .background(RoundedRectangle(cornerRadius: 20)
@@ -54,7 +51,6 @@ struct PokemonMiniCell: View {
 struct PokeMiniCell_Previews: PreviewProvider {
     
     static var previews: some View {
-        PokemonMiniCell(pokemon: Pokemon.mockedData.convertToCell(),
-                        action: {})
+        PokemonMiniCell(pokemon: Pokemon.mockedData.convertToCell())
     }
 }
