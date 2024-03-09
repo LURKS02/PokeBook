@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageSourceView: View {
     
     @State private var image: UIImage?
+    @State private var imageOpacity: Double = 0
     
     private let url: URL
     
@@ -23,9 +24,15 @@ struct ImageSourceView: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
+                    .opacity(imageOpacity)
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            imageOpacity = 1
+                        }
+                    }
             } else {
                 Color.get(.background(.cell))
-                    .frame(minHeight: 100)
+                    .scaledToFit()
             }
         }
         .onAppear {
