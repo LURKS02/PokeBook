@@ -80,9 +80,6 @@ private extension PokemonListScreen {
                     }
             }
             .padding(.horizontal)
-//            .fullScreenCover(item: $selectedPoke) { pokemon in
-//                PokemonDetailInfoScreen(pokemonID: pokemon.id)
-//            }
         }
         
         

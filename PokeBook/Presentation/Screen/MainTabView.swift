@@ -24,9 +24,10 @@ struct MainTabView: View {
                     }
             }
         }
-        .padding(.top, 10)
-        .background(Color.get(.background(.screen)).edgesIgnoringSafeArea(.bottom)
-            .shadow(color: .gray.opacity(0.3), radius: 2))
+        .padding(.vertical, 10)
+        .edgesIgnoringSafeArea(.bottom)
+        .background(Color.get(.background(.screen)))
+        .shadow(color: .gray.opacity(0.3), radius: 2)
     }
     
     private func switchTab(tab: TabIndex) {

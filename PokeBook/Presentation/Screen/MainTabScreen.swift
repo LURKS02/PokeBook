@@ -19,6 +19,9 @@ struct MainTabScreen: View {
                 LikedPokeListScreen(selection: $selection)
                     .tabBarHelper(tab: .liked, selection: $selection)
             }
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
     }
 }
