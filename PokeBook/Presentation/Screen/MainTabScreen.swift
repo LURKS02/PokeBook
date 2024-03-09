@@ -11,7 +11,7 @@ struct MainTabScreen: View {
     @State private var selection: TabIndex = .home
     
     var body: some View {
-        NavigationView {
+        SwipeBackController {
             MainTabController(selection: $selection) {
                 PokemonListScreen()
                     .tabBarHelper(tab: .home, selection: $selection)
@@ -22,6 +22,7 @@ struct MainTabScreen: View {
             .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
+            .navigationBarHidden(true)
         }
     }
 }

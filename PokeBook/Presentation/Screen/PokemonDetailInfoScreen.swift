@@ -40,6 +40,7 @@ struct PokemonDetailInfoScreen: View {
             animatedNavigationBar
         }
         .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(false)
         .toolbar(content: toolbarContent)
     }
     

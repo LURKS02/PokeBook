@@ -66,6 +66,7 @@
 		D964020D29EBD8D200C4EEEC /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D964020C29EBD8D200C4EEEC /* HexColor.swift */; };
 		D969EC2629ED48E0002BAC9B /* Response+FrontBackDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969EC2529ED48E0002BAC9B /* Response+FrontBackDefault.swift */; };
 		D969EC2829ED7583002BAC9B /* PokeSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969EC2729ED7583002BAC9B /* PokeSpinner.swift */; };
+		D97AC5112B9CC6E7002060F2 /* SwipeBackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AC5102B9CC6E7002060F2 /* SwipeBackController.swift */; };
 		D9B80F912B78B4BC0020351E /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B80F902B78B4BC0020351E /* ImageCacheManager.swift */; };
 		D9B80F932B78B6B10020351E /* ImageSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B80F922B78B6B10020351E /* ImageSourceView.swift */; };
 		D9C538CA29C89380005D577F /* HTTP+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C538C929C89380005D577F /* HTTP+Publisher.swift */; };
@@ -131,6 +132,7 @@
 		D964020C29EBD8D200C4EEEC /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		D969EC2529ED48E0002BAC9B /* Response+FrontBackDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+FrontBackDefault.swift"; sourceTree = "<group>"; };
 		D969EC2729ED7583002BAC9B /* PokeSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeSpinner.swift; sourceTree = "<group>"; };
+		D97AC5102B9CC6E7002060F2 /* SwipeBackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackController.swift; sourceTree = "<group>"; };
 		D9B80F902B78B4BC0020351E /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		D9B80F922B78B6B10020351E /* ImageSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSourceView.swift; sourceTree = "<group>"; };
 		D9C538C929C89380005D577F /* HTTP+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTP+Publisher.swift"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				D956F2FE2A691C7200585E13 /* Height.swift */,
 				D956F3192A6BFAC700585E13 /* TabIndex.swift */,
 				D956F31F2A6D1D4D00585E13 /* SafeArea.swift */,
+				D97AC5102B9CC6E7002060F2 /* SwipeBackController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				D956F3012A69371100585E13 /* BackButton.swift in Sources */,
 				D95C7AD62A519028000E78F7 /* isShinyExist.swift in Sources */,
 				D956F2C82A5AD78A00585E13 /* PokemonBigCell.swift in Sources */,
+				D97AC5112B9CC6E7002060F2 /* SwipeBackController.swift in Sources */,
 				D956F3342A6F91BD00585E13 /* Repository+Mock.swift in Sources */,
 				D956F3152A6BE58600585E13 /* MainTabView.swift in Sources */,
 				D94C286229C7C40D00A7A1C4 /* Pokemon.swift in Sources */,
