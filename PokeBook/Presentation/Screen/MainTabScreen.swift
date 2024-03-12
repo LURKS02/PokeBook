@@ -24,6 +24,7 @@ struct MainTabScreen: View {
             }
             .navigationBarHidden(true)
         }
+        .ignoresSafeArea(.keyboard)
     }
 }
 
